@@ -1,0 +1,28 @@
+server:
+  port: "${port:8110}"
+
+logging:
+  level:
+    root: INFO
+    com.gk.mortgage.calculator: INFO
+    
+spring: 
+  sleuth:
+     trace-id128: true
+
+management:
+  security:
+    enabled: false
+    
+environment:
+  interestrate:
+    uri: ${INTEREST_RATE_SERVICE_URI:http://localhost:8111/interest-rates}
+    username: user1
+    password: password1
+    
+security:
+  basic:
+    enabled: true    
+  user:
+    name: user1
+    password: password1
