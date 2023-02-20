@@ -6,9 +6,16 @@ logging:
     root: INFO
     com.gk.mortgage.calculator: INFO
     
-spring: 
+spring:
+  application:
+    name: mortgage-calculator
   sleuth:
      trace-id128: true
+  security:
+    user:
+      name: user1
+      password: password1
+      roles: api-user
 
 management:
   security:
@@ -18,11 +25,4 @@ environment:
   interestrate:
     uri: ${INTEREST_RATE_SERVICE_URI:http://localhost:8111/interest-rates}
     username: user1
-    password: password1
-    
-security:
-  basic:
-    enabled: true    
-  user:
-    name: user1
     password: password1

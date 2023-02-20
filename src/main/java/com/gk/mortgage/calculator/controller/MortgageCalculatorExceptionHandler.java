@@ -28,7 +28,7 @@ public class MortgageCalculatorExceptionHandler extends ResponseEntityExceptionH
 		log.error("Bad Request Input Exception: ", e);
 		ErrorResponse error = new ErrorResponse(e.getErrorCode(), e.getLocalizedMessage());
 		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		return handleExceptionInternal(e, error, headers, HttpStatus.BAD_REQUEST, request);
 	}
 
@@ -39,7 +39,7 @@ public class MortgageCalculatorExceptionHandler extends ResponseEntityExceptionH
 		log.error("Error invoking interest rate service: ", e);
 		ErrorResponse error = new ErrorResponse(e.getErrorCode(), e.getLocalizedMessage());
 		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+		headers.setContentType(MediaType.APPLICATION_JSON);
 		return handleExceptionInternal(e, error, headers, HttpStatus.INTERNAL_SERVER_ERROR, request);
 	}
 }
