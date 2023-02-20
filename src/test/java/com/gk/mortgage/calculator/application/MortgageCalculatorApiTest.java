@@ -42,10 +42,12 @@ public class MortgageCalculatorApiTest {
     @Test
     public void invokeMortgageCalculatorInterestOnlyPostRequestShouldBeSuccessHTTP200() throws Exception {
 
+        // given a valid request to calc interest only payment
         String requestBody = TestUtils.loadSourceFile("__files/mortgage-calculator-interest-only-request.json");
         
         String url = "/calculate";
 
+        // when api is invoked then we expect to get a http 200 and valid response data
         mockMvc.perform(post(url).headers(httpHeaders).content(requestBody).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))                
@@ -59,10 +61,12 @@ public class MortgageCalculatorApiTest {
     @Test
     public void invokeMortgageCalculatorFixedRatePostRequestShouldBeSuccessHTTP200() throws Exception {
 
+        // given a valid request to calc fixed rate payment
         String requestBody = TestUtils.loadSourceFile("__files/mortgage-calculator-fixed-rate-request.json");
         
         String url = "/calculate";
 
+        // when api is invoked then we expect to get a http 200 and valid response data
         mockMvc.perform(post(url).headers(httpHeaders).content(requestBody).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))                
@@ -76,10 +80,12 @@ public class MortgageCalculatorApiTest {
     @Test
     public void invokeMortgageCalculatorWithBadInputNoPrincipalShouldFailWithHTTP400() throws Exception {
 
+        // given a invalid request
         String requestBody = TestUtils.loadSourceFile("__files/mortgage-calculator-bad-input-no-principal-request.json");
         
         String url = "/calculate";
 
+        // when api is invoked then we expect an http 400 response with an appropriate error message
         mockMvc.perform(post(url).headers(httpHeaders).content(requestBody).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))                
