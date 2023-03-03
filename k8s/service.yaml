@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mortgage-calculator
+  namespace: mc-dev
+  labels:
+    app.kubernetes.io/name: mortgage-calculator
+    app.kubernetes.io/instance: mortgage-calculator
+    app.kubernetes.io/component: service  
+    app.kubernetes.io/created-by: gkovan
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8110
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: mortgage-calculator
+    app.kubernetes.io/instance: mortgage-calculator
+    app.kubernetes.io/component: service

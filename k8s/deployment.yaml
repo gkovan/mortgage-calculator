@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgage-calculator
+  namespace: mc-dev
+  labels:
+    app: mortgage-calculator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mortgage-calculator
+      app.kubernetes.io/name: mortgage-calculator
+      app.kubernetes.io/instance: mortgage-calculator
+      app.kubernetes.io/component: service
+  template:
+    metadata:
+      labels:
+        app: mortgage-calculator
+        app.kubernetes.io/name: mortgage-calculator
+        app.kubernetes.io/instance: mortgage-calculator
+        app.kubernetes.io/component: service
+    spec:
+      serviceAccountName: mortgage-calculator
+      containers:
+      - name: mortgage-calculator
+        image: gkovan/mortgage-calculator:latest
+        ports:
+        - containerPort: 8110
