@@ -24,7 +24,7 @@ public class HealthEndpointTest {
     @Test
     public void testEndpoint() throws Exception {
         String endpoint = "http://localhost:" + port + "/actuator/health";
-        String response = server.withBasicAuth("user1","password1").getForObject(endpoint, String.class);
+        String response = server.getForObject(endpoint, String.class);
                 
         assertTrue(response.contains("UP"));
     }

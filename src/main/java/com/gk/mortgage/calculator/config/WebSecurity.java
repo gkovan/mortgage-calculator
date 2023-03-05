@@ -13,7 +13,7 @@ public class WebSecurity{
          http
         .cors().and()
         .csrf().disable().authorizeHttpRequests()
-        .requestMatchers("/health").permitAll()
+        .requestMatchers("/actuator/health").permitAll()
         .requestMatchers("/calculate1").hasRole("api-user")
         .anyRequest().authenticated()
         .and()
