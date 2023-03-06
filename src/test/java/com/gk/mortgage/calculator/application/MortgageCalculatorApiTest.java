@@ -90,7 +90,7 @@ public class MortgageCalculatorApiTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))                
                 .andExpect(jsonPath("$.code", Matchers.equalTo("MC0001")))
-                .andExpect(jsonPath("$.message", Matchers.equalTo("MC0001:Princial amount does not exist.")));
+                .andExpect(jsonPath("$.message", Matchers.equalTo("MC0001:Request body validation failed. Principal amount does not exist. Resubmit the request body with principal amount.  See: https://github.com/gkovan/mortgage-calculator")));
     }
     
     
@@ -105,6 +105,6 @@ public class MortgageCalculatorApiTest {
                 .andExpect(status().isInternalServerError())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))                
                 .andExpect(jsonPath("$.code", Matchers.equalTo("MC0003")))
-                .andExpect(jsonPath("$.message", Matchers.equalTo("MC0003:Error invoking the interest rate service.")));
+                .andExpect(jsonPath("$.message", Matchers.equalTo("MC0003:Error invoking the interest rate service. Resubmit the request again.")));
     }    
 }

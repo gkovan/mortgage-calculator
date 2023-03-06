@@ -2,14 +2,14 @@ system: MC
 
 error:
   MC0000:
-    message: MC0000:Input request object does not exist.
+    message: "MC0000:Request body validation failed. Input request object does not exist. Resubmit the request with the proper request body. See: https://github.com/gkovan/mortgage-calculator"
   MC0001:
-    message: MC0001:Princial amount does not exist.
+    message: "MC0001:Request body validation failed. Principal amount does not exist. Resubmit the request body with principal amount.  See: https://github.com/gkovan/mortgage-calculator"
   MC0002:
-    message: MC0002:Term amount does not exist.
+    message: "MC0002:Request body validation failed. Term amount does not exist. Resubmit the request with the term amount. See: https://github.com/gkovan/mortgage-calculator"
   MC0003:
-    message: MC0003:Error invoking the interest rate service.
+    message: "MC0003:Error invoking the interest rate service. Resubmit the request again."
   MC0004:
-    message: MC0004:Error invoking the interest rate service. Incorrect username or password.  
+    message: "MC0004:Error invoking the interest rate service. Authentication error. Incorrect username or password. Contact the service provider to get the proper credentials."
   
     
