@@ -27,3 +27,6 @@ spec:
         image: gkovan/mortgage-calculator:latest
         ports:
         - containerPort: 8110
+            envFrom:
+      - configMapRef:
+          name: mortgage-calculator
