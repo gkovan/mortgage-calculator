@@ -4,6 +4,6 @@ metadata:
   name: mortgage-calculator
   namespace: mc-dev
 data:
-  PERSIST_REQUEST_DATA_TO_DB: false
+  PERSIST_REQUEST_DATA_TO_DB: "false"
   INTEREST_RATE_SERVICE_URI: interest-rate
   ZIPKIN_ENDPOINT: http://zipkin:9411/api/v2/spans

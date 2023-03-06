@@ -24,6 +24,6 @@ spec:
       serviceAccountName: mortgage-calculator
       containers:
       - name: mortgage-calculator
-        image: gkovan/mortgage-calculator:latest
+        image: gkovan/mortgage-calculator:0.0.2-SNAPSHOT
         ports:
         - containerPort: 8110
