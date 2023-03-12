@@ -25,7 +25,8 @@ jobs:
         id: run-newman
         uses: anthonyvscode/newman-action@v1
         with:
-          collection: collection.json
+          collection: thunder-collection_MortgageCalculator_postman.json
+          environment: thunder-environment_mortgage-calculator-local_postman.json
           reporters: cli
       - name: Output summary to console
         run: echo ${{ steps.run-newman.outputs.summary }}        
