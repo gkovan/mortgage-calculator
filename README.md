@@ -11,3 +11,9 @@
 ```
 ./mvnw spring-boot:run
 ```
+
+## Create docker image
+
+```
+./mvnw spring-boot:build-image
+```
