@@ -21,3 +21,14 @@ jobs:
         with:
           name: Package
           path: staging
+      - name: Test dev environment
+        id: run-newman
+        uses: anthonyvscode/newman-action@v1
+        with:
+          collection: collection.json
+          reporters: cli
+      - name: Output summary to console
+        run: echo ${{ steps.run-newman.outputs.summary }}        
+
+
+
