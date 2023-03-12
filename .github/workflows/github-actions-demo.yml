@@ -21,6 +21,11 @@ jobs:
         with:
           name: Package
           path: staging
+  intTest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Test dev environment
         id: run-newman
         uses: anthonyvscode/newman-action@v1
