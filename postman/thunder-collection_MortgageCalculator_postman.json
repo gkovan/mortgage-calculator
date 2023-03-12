@@ -1,0 +1,350 @@
+{
+    "info": {
+        "name": "MortgageCalculator",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "POST calculate fixed rate",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{host}}:{{port}}/calculate",
+                    "path": [
+                        "calculate"
+                    ],
+                    "host": [
+                        "{{host}}"
+                    ],
+                    "port": "{{port}}"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Client-id",
+                        "value": "postman"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n\t\"name\" : \"Gerry Kovan\",\n\t\"propertyAddress\": \"99-31 64th Avenue, Rego Park, NY, 11581\",\n\t\"creditCard\": \"4111111111111111\",\n\t\"creditCardExpiry\": \"05/26\",\n\t\"socialSecurityNumber\": \"123-45-6789\",\n  \"principal\": \"100000\",\n  \"interestRate\": \"5.0\",\n  \"term\": \"30\",\n  \"type\": \"fixed\"\n}"
+                },
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "username",
+                            "value": "user1",
+                            "type": "string"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password1",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "POST calculate interest only",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{host}}:{{port}}/calculate",
+                    "path": [
+                        "calculate"
+                    ],
+                    "host": [
+                        "{{host}}"
+                    ],
+                    "port": "{{port}}"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n    \"principal\": \"100000\",\n    \"interestRate\": \"8.0\",\n    \"term\": \"30\",\n    \"type\": \"interest\"\n}"
+                },
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "username",
+                            "value": "user1",
+                            "type": "string"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password1",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "POST calculate fixed rate - Server error",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{host}}:{{port}}/calculate",
+                    "path": [
+                        "calculate"
+                    ],
+                    "host": [
+                        "{{host}}"
+                    ],
+                    "port": "{{port}}"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Client-id",
+                        "value": "postman"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n\t\"name\" : \"Gerry Kovan\",\n\t\"propertyAddress\": \"99-31 64th Avenue, Rego Park, NY, 11581\",\n\t\"creditCard\": \"4111111111111111\",\n\t\"creditCardExpiry\": \"05/26\",\n\t\"socialSecurityNumber\": \"123-45-6789\",\n  \"principal\": \"100000\",\n  \"term\": \"30\",\n  \"type\": \"fixed\"\n}"
+                },
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "username",
+                            "value": "user1",
+                            "type": "string"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password1",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "POST calculate fixed rate - Bad Request - Unauthorized",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{host}}:{{port}}/calculate",
+                    "path": [
+                        "calculate"
+                    ],
+                    "host": [
+                        "{{host}}"
+                    ],
+                    "port": "{{port}}"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Client-id",
+                        "value": "postman"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n\t\"name\" : \"Gerry Kovan\",\n\t\"propertyAddress\": \"99-31 64th Avenue, Rego Park, NY, 11581\",\n\t\"creditCard\": \"4111111111111111\",\n\t\"creditCardExpiry\": \"05/26\",\n\t\"socialSecurityNumber\": \"123-45-6789\",\n  \"principal\": \"100000\",\n  \"interestRate\": \"5.0\",\n  \"term\": \"30\",\n  \"type\": \"fixed\"\n}"
+                },
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "username",
+                            "value": "bad-user",
+                            "type": "string"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password1",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "POST calculate fixed rate - Bad Request - No principal amount",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{host}}:{{port}}/calculate",
+                    "path": [
+                        "calculate"
+                    ],
+                    "host": [
+                        "{{host}}"
+                    ],
+                    "port": "{{port}}"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Client-id",
+                        "value": "postman"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n\t\"name\" : \"Gerry Kovan\",\n\t\"propertyAddress\": \"99-31 64th Avenue, Rego Park, NY, 11581\",\n\t\"creditCard\": \"4111111111111111\",\n\t\"creditCardExpiry\": \"05/26\",\n\t\"socialSecurityNumber\": \"123-45-6789\",\n  \"interestRate\": \"5.0\",\n  \"term\": \"30\",\n  \"type\": \"fixed\"\n}"
+                },
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "username",
+                            "value": "user1",
+                            "type": "string"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password1",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "POST calculate call interest service",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{host}}:{{port}}/calculate",
+                    "path": [
+                        "calculate"
+                    ],
+                    "host": [
+                        "{{host}}"
+                    ],
+                    "port": "{{port}}"
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n    \"principal\": \"100000\",\n    \"term\": \"30\",\n    \"type\": \"interest\"\n}"
+                },
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "username",
+                            "value": "user1",
+                            "type": "string"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password1",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "health",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{host}}:{{port}}/actuator/health",
+                    "path": [
+                        "actuator",
+                        "health"
+                    ],
+                    "host": [
+                        "{{host}}"
+                    ],
+                    "port": "{{port}}"
+                },
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "username",
+                            "value": "user1",
+                            "type": "string"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password1",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "health no auth",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{host}}:{{port}}/actuator/health",
+                    "path": [
+                        "actuator",
+                        "health"
+                    ],
+                    "host": [
+                        "{{host}}"
+                    ],
+                    "port": "{{port}}"
+                }
+            }
+        }
+    ]
+}

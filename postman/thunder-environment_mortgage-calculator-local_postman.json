@@ -1,0 +1,19 @@
+{
+    "name": "mortgage-calculator-local",
+    "id": "0a4ffd45-f85f-4ccf-aacc-524b88a4f009",
+    "_postman_variable_scope": "environment",
+    "_postman_exported_at": "2023-03-12T20:33:08.881Z",
+    "_postman_exported_using": "Thunder Client",
+    "values": [
+        {
+            "key": "host",
+            "value": "localhost",
+            "enabled": true
+        },
+        {
+            "key": "port",
+            "value": "8110",
+            "enabled": true
+        }
+    ]
+}
