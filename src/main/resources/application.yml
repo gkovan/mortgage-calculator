@@ -30,4 +30,5 @@ environment:
     uri: ${INTEREST_RATE_SERVICE_URI:http://localhost:8111/interest-rates}
     username: user1
     password: password1
-  persistRequestDataToDB: ${PERSIST_REQUEST_DATA_TO_DB:false}
+  persistRequestDataToDB: ${PERSIST_REQUEST_DATA_TO_DB:true}
+  dynamoDBTable: ${DYNAMO_DB_TABLE:mortgage-calculator-dev}
