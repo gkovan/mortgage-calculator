@@ -32,7 +32,7 @@ jobs:
         uses: anthonyvscode/newman-action@v1
         with:
           collection: ./postman/thunder-collection_MortgageCalculator_postman.json
-          environment: ./postman/thunder-environment_mortgage-calculator-local_postman.json
+          environment: ./postman/thunder-environment_mortgage-calculator-apigw-mock_postman.json
           reporters: cli
       - name: Output summary to console
         run: echo ${{ steps.run-newman.outputs.summary }}        
