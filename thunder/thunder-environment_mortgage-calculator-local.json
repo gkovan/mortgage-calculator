@@ -1,0 +1,16 @@
+{
+    "client": "Thunder Client",
+    "environmentName": "mortgage-calculator-local",
+    "dateExported": "2023-03-13T03:37:20.042Z",
+    "version": "1.0",
+    "variables": [
+        {
+            "name": "host",
+            "value": "http://localhost:8110"
+        },
+        {
+            "name": "port",
+            "value": "8110"
+        }
+    ]
+}

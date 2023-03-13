@@ -1,0 +1,318 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "MortgageCalculator",
+    "dateExported": "2023-03-13T03:36:45.206Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "01380ab9-e700-419c-acbf-332c2499b9a0",
+            "colId": "b2f60230-7e8e-4785-8121-66c2a5ef8609",
+            "containerId": "",
+            "name": "POST calculate fixed rate",
+            "url": "{{host}}/calculate",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-02-19T23:10:00.386Z",
+            "modified": "2023-03-13T01:28:47.922Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Client-id",
+                    "value": "postman"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\" : \"Gerry Kovan\",\n\t\"propertyAddress\": \"99-31 64th Avenue, Rego Park, NY, 11581\",\n\t\"creditCard\": \"4111111111111111\",\n\t\"creditCardExpiry\": \"05/26\",\n\t\"socialSecurityNumber\": \"123-45-6789\",\n  \"principal\": \"100000\",\n  \"interestRate\": \"5.0\",\n  \"term\": \"30\",\n  \"type\": \"fixed\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "user1",
+                    "password": "password1"
+                }
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "application/json"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.monthlyPayment",
+                    "action": "equal",
+                    "value": "536.82"
+                }
+            ]
+        },
+        {
+            "_id": "a1ee3872-8813-4ad6-9d51-c01cb9dff18c",
+            "colId": "b2f60230-7e8e-4785-8121-66c2a5ef8609",
+            "containerId": "",
+            "name": "POST calculate interest only",
+            "url": "{{host}}/calculate",
+            "method": "POST",
+            "sortNum": 20625,
+            "created": "2023-02-19T23:10:00.387Z",
+            "modified": "2023-03-13T03:12:43.450Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"principal\": \"100000\",\n    \"interestRate\": \"8.0\",\n    \"term\": \"30\",\n    \"type\": \"interest\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "user1",
+                    "password": "password1"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "290d4cc1-f791-49a0-bd8b-741a12c340a2",
+            "colId": "b2f60230-7e8e-4785-8121-66c2a5ef8609",
+            "containerId": "",
+            "name": "POST calculate fixed rate - Server error",
+            "url": "{{host}}/calculate",
+            "method": "POST",
+            "sortNum": 21250,
+            "created": "2023-03-05T21:45:22.030Z",
+            "modified": "2023-03-13T03:12:53.545Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Client-id",
+                    "value": "postman"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\" : \"Gerry Kovan\",\n\t\"propertyAddress\": \"99-31 64th Avenue, Rego Park, NY, 11581\",\n\t\"creditCard\": \"4111111111111111\",\n\t\"creditCardExpiry\": \"05/26\",\n\t\"socialSecurityNumber\": \"123-45-6789\",\n  \"principal\": \"100000\",\n  \"term\": \"30\",\n  \"type\": \"fixed\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "user1",
+                    "password": "password1"
+                }
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "500"
+                }
+            ]
+        },
+        {
+            "_id": "513229b2-a294-46c8-9496-dd89e19a9473",
+            "colId": "b2f60230-7e8e-4785-8121-66c2a5ef8609",
+            "containerId": "",
+            "name": "POST calculate fixed rate - Bad Request - Unauthorized",
+            "url": "{{host}}/calculate",
+            "method": "POST",
+            "sortNum": 22500,
+            "created": "2023-03-05T21:43:43.774Z",
+            "modified": "2023-03-13T03:13:04.873Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Client-id",
+                    "value": "postman"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\" : \"Gerry Kovan\",\n\t\"propertyAddress\": \"99-31 64th Avenue, Rego Park, NY, 11581\",\n\t\"creditCard\": \"4111111111111111\",\n\t\"creditCardExpiry\": \"05/26\",\n\t\"socialSecurityNumber\": \"123-45-6789\",\n  \"principal\": \"100000\",\n  \"interestRate\": \"5.0\",\n  \"term\": \"30\",\n  \"type\": \"fixed\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "bad-user",
+                    "password": "password1"
+                }
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "401"
+                }
+            ]
+        },
+        {
+            "_id": "51284081-7c81-4362-b888-6ff8f8dfeeec",
+            "colId": "b2f60230-7e8e-4785-8121-66c2a5ef8609",
+            "containerId": "",
+            "name": "POST calculate fixed rate - Bad Request - No principal amount",
+            "url": "{{host}}/calculate",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-03-05T21:41:46.251Z",
+            "modified": "2023-03-13T03:13:17.268Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Client-id",
+                    "value": "postman"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\" : \"Gerry Kovan\",\n\t\"propertyAddress\": \"99-31 64th Avenue, Rego Park, NY, 11581\",\n\t\"creditCard\": \"4111111111111111\",\n\t\"creditCardExpiry\": \"05/26\",\n\t\"socialSecurityNumber\": \"123-45-6789\",\n  \"interestRate\": \"5.0\",\n  \"term\": \"30\",\n  \"type\": \"fixed\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "user1",
+                    "password": "password1"
+                }
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "400"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "MC0001"
+                }
+            ]
+        },
+        {
+            "_id": "fbaee065-34aa-4775-a1bd-874a6fa5d30a",
+            "colId": "b2f60230-7e8e-4785-8121-66c2a5ef8609",
+            "containerId": "",
+            "name": "POST calculate call interest service",
+            "url": "{{host}}/calculate",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-02-19T23:10:00.388Z",
+            "modified": "2023-03-13T03:13:27.554Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"principal\": \"100000\",\n    \"term\": \"30\",\n    \"type\": \"interest\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "user1",
+                    "password": "password1"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "8d2282d6-b5e1-4d01-ba25-637a1166f507",
+            "colId": "b2f60230-7e8e-4785-8121-66c2a5ef8609",
+            "containerId": "",
+            "name": "health",
+            "url": "{{host}}/actuator/health",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-02-20T04:47:37.853Z",
+            "modified": "2023-03-13T03:14:06.233Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "user1",
+                    "password": "password1"
+                }
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.status",
+                    "action": "equal",
+                    "value": "UP"
+                }
+            ]
+        },
+        {
+            "_id": "72101008-f9ca-4ca1-ae44-47cdd2eb63fc",
+            "colId": "b2f60230-7e8e-4785-8121-66c2a5ef8609",
+            "containerId": "",
+            "name": "health no auth",
+            "url": "{{host}}/actuator/health",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-03-05T15:37:57.697Z",
+            "modified": "2023-03-13T01:28:06.321Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.status",
+                    "action": "equal",
+                    "value": "UP"
+                }
+            ]
+        }
+    ]
+}

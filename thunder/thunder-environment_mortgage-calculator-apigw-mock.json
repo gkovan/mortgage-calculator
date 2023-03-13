@@ -1,0 +1,12 @@
+{
+    "client": "Thunder Client",
+    "environmentName": "mortgage-calculator-apigw-mock",
+    "dateExported": "2023-03-13T03:37:29.473Z",
+    "version": "1.0",
+    "variables": [
+        {
+            "name": "host",
+            "value": "https://42uom8b5l1.execute-api.us-east-1.amazonaws.com/dev"
+        }
+    ]
+}

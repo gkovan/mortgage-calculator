@@ -1,0 +1,12 @@
+{
+    "client": "Thunder Client",
+    "environmentName": "mortgage-calculator-aws-eks-mc-dev",
+    "dateExported": "2023-03-13T03:37:39.909Z",
+    "version": "1.0",
+    "variables": [
+        {
+            "name": "host",
+            "value": "http://k8s-mcdev-mortgage-b6a427cd46-17a974fa7f731a50.elb.us-east-1.amazonaws.com"
+        }
+    ]
+}
