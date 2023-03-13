@@ -37,5 +37,38 @@ jobs:
       - name: Output summary to console
         run: echo ${{ steps.run-newman.outputs.summary }}        
 
+  testDev2:
+    needs: build
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      # Isstall Node on the runner
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+
+      # Install Thunder Client CLI
+      - name: Install Thunder Client CLI
+        run: |
+          npm install -g @thunderclient/cli
+          
+      - name: Make Directory for results
+        run: mkdir -p thunder-reports
+
+      # Run the Thunder Client collection
+      - name: Run Thunder Client collection
+        run: |
+          tc --col "thunder-collection_MortgageCalculator.json" --env 'thunder-environment_mortgage-calculator-apigw-mock.json' --report csv,json,xml,html --stop-on-fail
+      # Upload the contents of Test Results directory to workspace
+      - name: Output the run Details
+        uses: actions/upload-artifact@v3
+        with:
+          name: RunReports
+          path: thunder-reports
 
