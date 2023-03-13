@@ -1,0 +1,14 @@
+{
+    "name": "mortgage-calculator-aws-eks-mc-dev",
+    "id": "6ed1f190-638c-4790-a77c-5635547b0cbb",
+    "_postman_variable_scope": "environment",
+    "_postman_exported_at": "2023-03-13T03:15:57.910Z",
+    "_postman_exported_using": "Thunder Client",
+    "values": [
+        {
+            "key": "host",
+            "value": "http://k8s-mcdev-mortgage-b6a427cd46-17a974fa7f731a50.elb.us-east-1.amazonaws.com",
+            "enabled": true
+        }
+    ]
+}

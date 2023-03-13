@@ -10,14 +10,13 @@
             "request": {
                 "method": "POST",
                 "url": {
-                    "raw": "{{host}}:{{port}}/calculate",
+                    "raw": "{{host}}/calculate",
                     "path": [
                         "calculate"
                     ],
                     "host": [
                         "{{host}}"
-                    ],
-                    "port": "{{port}}"
+                    ]
                 },
                 "header": [
                     {
@@ -60,14 +59,13 @@
             "request": {
                 "method": "POST",
                 "url": {
-                    "raw": "{{host}}:{{port}}/calculate",
+                    "raw": "{{host}}/calculate",
                     "path": [
                         "calculate"
                     ],
                     "host": [
                         "{{host}}"
-                    ],
-                    "port": "{{port}}"
+                    ]
                 },
                 "header": [
                     {
@@ -106,14 +104,13 @@
             "request": {
                 "method": "POST",
                 "url": {
-                    "raw": "{{host}}:{{port}}/calculate",
+                    "raw": "{{host}}/calculate",
                     "path": [
                         "calculate"
                     ],
                     "host": [
                         "{{host}}"
-                    ],
-                    "port": "{{port}}"
+                    ]
                 },
                 "header": [
                     {
@@ -156,14 +153,13 @@
             "request": {
                 "method": "POST",
                 "url": {
-                    "raw": "{{host}}:{{port}}/calculate",
+                    "raw": "{{host}}/calculate",
                     "path": [
                         "calculate"
                     ],
                     "host": [
                         "{{host}}"
-                    ],
-                    "port": "{{port}}"
+                    ]
                 },
                 "header": [
                     {
@@ -206,14 +202,13 @@
             "request": {
                 "method": "POST",
                 "url": {
-                    "raw": "{{host}}:{{port}}/calculate",
+                    "raw": "{{host}}/calculate",
                     "path": [
                         "calculate"
                     ],
                     "host": [
                         "{{host}}"
-                    ],
-                    "port": "{{port}}"
+                    ]
                 },
                 "header": [
                     {
@@ -256,14 +251,13 @@
             "request": {
                 "method": "POST",
                 "url": {
-                    "raw": "{{host}}:{{port}}/calculate",
+                    "raw": "{{host}}/calculate",
                     "path": [
                         "calculate"
                     ],
                     "host": [
                         "{{host}}"
-                    ],
-                    "port": "{{port}}"
+                    ]
                 },
                 "header": [
                     {
@@ -302,15 +296,14 @@
             "request": {
                 "method": "GET",
                 "url": {
-                    "raw": "{{host}}:{{port}}/actuator/health",
+                    "raw": "{{host}}/actuator/health",
                     "path": [
                         "actuator",
                         "health"
                     ],
                     "host": [
                         "{{host}}"
-                    ],
-                    "port": "{{port}}"
+                    ]
                 },
                 "auth": {
                     "type": "basic",
@@ -334,15 +327,14 @@
             "request": {
                 "method": "GET",
                 "url": {
-                    "raw": "{{host}}:{{port}}/actuator/health",
+                    "raw": "{{host}}/actuator/health",
                     "path": [
                         "actuator",
                         "health"
                     ],
                     "host": [
                         "{{host}}"
-                    ],
-                    "port": "{{port}}"
+                    ]
                 }
             }
         }
