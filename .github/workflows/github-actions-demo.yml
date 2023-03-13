@@ -64,7 +64,7 @@ jobs:
       # Run the Thunder Client collection
       - name: Run Thunder Client collection
         run: |
-          tc --col "thunder-collection_MortgageCalculator.json" --env 'thunder-environment_mortgage-calculator-apigw-mock.json' --report csv,json,xml,html --stop-on-fail
+          tc --col "./thunder/thunder-collection_MortgageCalculator.json" --env './thunder/thunder-environment_mortgage-calculator-apigw-mock.json' --report csv,json,xml,html --stop-on-fail
       # Upload the contents of Test Results directory to workspace
       - name: Output the run Details
         uses: actions/upload-artifact@v3
