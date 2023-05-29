@@ -17,5 +17,3 @@
 ```
 ./mvnw spring-boot:build-image
 ```
-
-aaa
