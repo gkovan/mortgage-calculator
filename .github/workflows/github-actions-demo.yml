@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: user/app:latest 
+          tags: gkovan/mmortgage-calculator-github-action:latest 
   testDev:
     needs: build
     runs-on: ubuntu-latest
