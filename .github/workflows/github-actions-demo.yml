@@ -20,7 +20,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Package
-          path: staging
+          path: target
   push_to_registry:
     needs: build
     name: Push Docker image to Docker Hub
@@ -32,7 +32,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: Package
-          path: staging        
+          path: target        
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -46,7 +46,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: gkovan/mmortgage-calculator-github-action:latest 
+          tags: gkovan/mmortgage-calculator-github-action:latest
   testDev:
     needs: build
     runs-on: ubuntu-latest
