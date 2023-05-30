@@ -29,8 +29,9 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
+          context: "{{defaultContext}}"
           push: true
-          tags: gkovan/mmortgage-calculator-github-action:latest      
+          tags: gkovan/mortgage-calculator-github-action:latest      
       - uses: actions/upload-artifact@v3
         with:
           name: Package
