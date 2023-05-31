@@ -68,7 +68,7 @@ jobs:
           run: kubectl get svc
         - name: deploy to eks
           run: |
-            kubectl apply -f ./k8s/namepace.yaml
+            kubectl apply -f ./k8s/namespace.yaml
             kubectl apply -f ./k8s/serviceAccount.yaml
             kubectl apply -f ./k8s/configMap.yaml
             kubectl apply -f ./k8s/deployment.yaml
