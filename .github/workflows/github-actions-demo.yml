@@ -59,7 +59,12 @@ jobs:
         # Hello from AWS: WhoAmI
         - name: Sts GetCallerIdentity
           run: |
-            aws sts get-caller-identity  
+            aws sts get-caller-identity
+        - name: update kube config
+          run: aws eks update-kubeconfig --region us-east-1 --name eks-workshop
+        - name: deploy to eks
+          run: |
+            kubectl apply -f ./k8s/deployment.yaml
   testDev:
     needs: build
     runs-on: ubuntu-latest
