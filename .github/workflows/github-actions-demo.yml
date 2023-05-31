@@ -36,6 +36,22 @@ jobs:
         with:
           name: Package
           path: target
+  AssumeRoleAndCallIdentity:
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - name: Git clone the repository
+          uses: actions/checkout@v3
+        - name: configure aws credentials
+          uses: aws-actions/configure-aws-credentials@v2
+          with:
+            role-to-assume: arn:aws:iam::577619097681:role/GitHubAction-AssumeRoleWithAction
+            role-session-name: GitHub_to_AWS_via_FederatedOIDC
+            aws-region: ${{ env.AWS_REGION }}
+        # Hello from AWS: WhoAmI
+        - name: Sts GetCallerIdentity
+          run: |
+            aws sts get-caller-identity  
   testDev:
     needs: build
     runs-on: ubuntu-latest
