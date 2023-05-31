@@ -44,7 +44,7 @@ jobs:
         with:
           name: Package
           path: target
-  AssumeRoleAndCallIdentity:
+  DeployToEks:
       needs: build
       runs-on: ubuntu-latest
       steps:
@@ -68,7 +68,11 @@ jobs:
           run: kubectl get svc
         - name: deploy to eks
           run: |
+            kubectl apply -f ./k8s/namepace.yaml
+            kubectl apply -f ./k8s/serviceAccount.yaml
+            kubectl apply -f ./k8s/configMap.yaml
             kubectl apply -f ./k8s/deployment.yaml
+            kubectl apply -f ./k8s/service.yaml
   testDev:
     needs: build
     runs-on: ubuntu-latest
