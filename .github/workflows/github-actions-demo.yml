@@ -73,7 +73,7 @@ jobs:
             kubectl apply -f ./k8s/configMap.yaml
             kubectl apply -f ./k8s/deployment.yaml
             kubectl apply -f ./k8s/service.yaml
-  testDev:
+  postmanTestDev:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -88,8 +88,7 @@ jobs:
           reporters: cli
       - name: Output summary to console
         run: echo ${{ steps.run-newman.outputs.summary }}        
-
-  testDev2:
+  thunderClientTestDev:
     needs: build
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
