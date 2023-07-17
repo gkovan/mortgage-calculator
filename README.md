@@ -26,3 +26,6 @@
 
 * eks api server unauthorized-error
     * https://repost.aws/knowledge-center/eks-api-server-unauthorized-error
+
+* Adding Adding a Custom Spring Boot Metric with Prometheus
+    * https://tanzu.vmware.com/developer/guides/spring-prometheus/

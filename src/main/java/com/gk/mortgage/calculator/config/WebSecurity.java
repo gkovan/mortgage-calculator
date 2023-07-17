@@ -20,4 +20,18 @@ public class WebSecurity{
         .httpBasic();
          return http.build();
     }
+
+    // @Bean
+    // public SecurityFilterChain configure(HttpSecurity http) throws Exception {
+    //      http
+    //     .cors().and()
+    //     .csrf().disable().authorizeHttpRequests()
+    //     .requestMatchers(new AntPathRequestMatcher("/actuator/health")).permitAll()
+    //     .requestMatchers(new AntPathRequestMatcher("/actuator/metrics")).permitAll()
+    //     .requestMatchers("/calculate1").hasRole("api-user")
+    //     .anyRequest().authenticated()
+    //     .and()
+    //     .httpBasic();
+    //      return http.build();
+    // }
 }
